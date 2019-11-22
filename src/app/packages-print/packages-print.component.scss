@@ -1,0 +1,13 @@
+@media print {
+  body{
+    width: 21cm;
+    height: 29.7cm;
+    margin: 30mm 45mm 30mm 45mm;
+    -webkit-print-color-adjust: exact;
+    /* change the margins as you want them to be. */
+  }
+}
+
+.print-section{
+  text-align: center;
+}
