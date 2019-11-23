@@ -20,39 +20,29 @@ export class PackagesPrintComponent implements OnInit {
     popupWin = window.open('', '_blank', 'height=500,width=900');
     popupWin.document.open();
     popupWin.document.write(`
-<style>
-body {
-  background: rgb(204,204,204); 
-}
-page {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 0.5cm;
-  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-}
-page[size="A4"] {  
-  width: 21cm;
-  height: 29.7cm; 
-}
-page[size="A4"][layout="portrait"] {
-  width: 29.7cm;
-  height: 21cm;  
-}
-@media print {
-  body, page {
-    margin: 0;
-    box-shadow: 0;
-  }
-}
-</style>
-    <body onload="window.print();window.close()">
-    <div class="to-print">
-    ${printContents}
-</div>
-</body>
-      </html>`
+                            <style>
+                            @media print {
+                                @page  {
+                                    size: 4in 2in;                                
+                                    margin: 0;                                
+                                }
+                                 
+                                body {
+                                    margin: 0;
+                                }
+                               
+                                img {
+                                    width: 4in;
+                                    height: 2in;
+                                }  
+                            }
+                            </style>
+                            <body>
+                                <div class="to-print"> ${printContents} </div>
+                            </body>
+                            </html>
+                            `
     );
-    popupWin.document.close();
   }
 }
 
