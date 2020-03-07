@@ -1,0 +1,11 @@
+<div class="search-results"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()"
+     [infiniteScrollDisabled]="isFullListDisplayed"
+     [scrollWindow]="false">
+  <p *ngFor="let item of itemsToShow; let i = index">
+    {{i + ' ' + item}}
+  </p>
+</div>
